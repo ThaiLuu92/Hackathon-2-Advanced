@@ -135,7 +135,7 @@ function btn_del(index) {
   localStorage.setItem("students", JSON.stringify(students));
 
   // B4: render
-  renderStudent();
+  renderStudent(students);
 }
 
 
