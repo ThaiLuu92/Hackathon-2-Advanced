@@ -80,7 +80,7 @@ form.addEventListener("submit", (e) => {
 
 
 // Hàm hiển thị
-function renderStudent() {
+function renderStudent(data) {
   // B1: lấy thông tin từ local
   const students = JSON.parse(localStorage.getItem("students")) || [];
 
@@ -122,6 +122,8 @@ function renderStudent() {
   localStorage.setItem("students", JSON.stringify(students));
 }
 
+
+// Hàm xóa
 function btn_del(index) {
   //  B1: Lấy dữ liệu từ local
   const students = JSON.parse(localStorage.getItem("students")) || [];
@@ -136,18 +138,21 @@ function btn_del(index) {
   renderStudent();
 }
 
-// function handleSearch(valueSearch) {
-//     const students = JSON.parse(localStorage.getItem("students")) || [];
-//     const dataFilter = [];
 
-//     students.forEach((student) => {
-//       if (student.name.toLowerCase().includes(valueSearch.toLowerCase())) {
-//         dataFilter.push(student);
-//       }
-//     });
+// Hàm tìm tên
+
+function handleSearch(valueSearch) {
+    const students = JSON.parse(localStorage.getItem("students")) || [];
+    const dataFilter = [];
+
+    students.forEach((student) => {
+      if (student.name.toLowerCase().includes(valueSearch.toLowerCase())) {
+        dataFilter.push(student);
+      }
+    });
     
-//     renderPlayer(dataFilter);
-//   }
+    renderStudent(dataFilter);
+  }
 
 
 // Sắp xếp theo thứ tự AB
