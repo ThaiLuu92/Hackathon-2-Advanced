@@ -1,11 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HACKATHON - 2 - ADVANCED</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            gap: 50px;
+        }
+
+        table, tr, th, td {
+            border-collapse: collapse;
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .student-information {
+            margin-left: 100px;
+            margin-top: 100px;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .student-list {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .search-bar {
+            display: flex;
+            padding: 10px 0;
+        }
+
+        #inp-form {
+            border: 1px solid black;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+            
+            /* justify-content: space-between;
+            text-align: center; */
+        }
+
+        #inp-form > * {
+           display: flex;
+           justify-content: space-between;
+           padding: 10px;
+        }
+
+        #inp-form button {
+            text-align: center;
+        }
+
+        .msg {
+            color: red;
+            position: relative;
+            z-index: 999;
+        }
+
+       
+    </style>
 </head>
+
 <body>
-    
+
+
+    <div class="student-information">
+        <h3>Thông tin học viên</h3>
+        <form action="" id="inp-form">
+            <div class="name">
+                
+                <label for="inp-name">Họ và tên:</label>
+                <input type="text" id="inp-name" name="inp-name">
+                
+            </div>
+            <div class="email">
+                <label for="inp-email">Email:</label>
+                <input type="text" id="inp-email" name="inp-email">
+            </div>
+            <div class="phone">
+                <label for="inp-phone">Số điện thoại:</label>
+                <input type="text" id="inp-phone" name="inp-phone">
+            </div>
+            <div class="address">
+                <label for="inp-address">Quên quán:</label>
+                <input type="text" id="inp-address" name="inp-address">
+            </div>
+            <div class="gender">
+                <p>Giới tính</p>
+                <input type="radio" name="gender" value="male" checked> Nam<br>
+                <input type="radio" name="gender" value="female">Nữ<br>
+            </div>
+            <div class="button">
+                <input type="submit" value="Lưu lại" >
+            </div>
+        </form>
+
+    </div>
+
+    <div class="student-list">
+        <h3>Danh sách học viên</h3>
+        <div class="search-bar">
+            <p>Tìm kiếm học viên : </p>
+            <input type="text" name="" id=""><button onclick="handleSearch()">Search</button>
+        </div>
+        <table id="list-student">
+            <tr>
+                <th>#</th>
+                <th>Họ tên</th>
+                <th>Email</th>
+                <th>Điện thoại</th>
+                <th>Địa chỉ</th>
+                <th>Gender</th>
+                <th>Hành động</th>
+                <th>Sắp xếp</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>rikkei</td>
+                <td>rikkei@gmail.com</td>
+                <td>0823868888</td>
+                <td>HN</td>
+                <td>Nam</td>
+                <td><button>edit</button><button>delete</button></td>
+                <td></td>
+            </tr>
+            <!-- <tr>
+                <td>1</td>
+                <td>rikkei</td>
+                <td>rikkei@gmail.com</td>
+                <td>0823868888</td>
+                <td>HN</td>
+                <td>Nam</td>
+                <td><button onclick="btn_edit()">edit</button><button>delete</button></td>
+                <td></td>
+            </tr> -->
+
+        </table>
+    </div>
+
+
 </body>
+<script src="/script.js"></script>
+
 </html>
